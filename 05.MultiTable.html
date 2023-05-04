@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(180, 207, 210);
+        }
+
+        table {
+            width: 800px;
+            height: 300px;
+            border: 3px solid rgb(13, 140, 163);
+            border-radius: 15px;
+            border-collapse: collapse;
+            margin: 50px auto;
+        }
+
+        tr,
+        td {
+            border: 1px solid rgb(167, 187, 191);
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            border-collapse: collapse;
+            border-left: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 請畫出九九乘法表 -->
+    <script>
+        let MultiTable = () => {
+            document.write(`<table>`)
+            for (let i = 1; i <= 9; i++) {
+                document.write('<tr>')
+                for (let x = 1; x <= 9; x++) {
+                    document.write(`<td>${i}*${x}=${i * x}<td>`)
+                }
+                document.write('<tr>')
+            }
+            document.write(`</table>`)
+        }
+        MultiTable();
+    </script>
+</body>
+
+</html>

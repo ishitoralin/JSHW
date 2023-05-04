@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 標楷體;
+        }
+
+        .container {
+            width: 300px;
+            border: 2px dashed gray;
+            margin: 50px auto;
+            padding: 10px;
+            border-radius: 15px;
+            background-color: #9dffd8;
+            box-shadow: 5px 5px 5px rgb(186, 186, 186);
+        }
+
+        ol {
+            list-style-position: inside;
+        }
+
+        .input {
+            width: 100%;
+            display: flex;
+            flex-flow: column wrap;
+        }
+
+        .input p {
+            margin: 10px auto;
+
+        }
+
+        .box {
+            margin: 10px 10px;
+            border-radius: 5px;
+            height: 25px;
+            padding-left: 10px;
+        }
+
+        .check {
+            width: 30%;
+            margin: 10px 10px;
+            background-color: #92a8e6;
+            height: 25px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .check:hover {
+            background-color: #5c81e6;
+            transition: 0.3s linear;
+        }
+
+        .check:active {
+            background-color: #eea8a8;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 密碼驗證條件：8位數以上、至少包含一個大寫字母、小寫字母、數字、符號 -->
+    <div class="container">
+        <div class="input">
+            <p>請自訂密碼</p>
+            <input class="box" type="password" id="inputpwd" placeholder="請輸入您的密碼">
+            <input class="check" type="button" value="送出" onclick="pwdcheck()" id="submit">
+            <input class="box" type="text" id="pwdresult" readonly>
+        </div>
+        <div>
+            <ol>
+                <p>密碼規定<strong>(必須)</strong></p>
+                <li>長度須8位數以上</li>
+                <li>至少包含一個大寫字母</li>
+                <li>至少包含一個小寫字母</li>
+                <li>至少包含一個數字</li>
+                <li>至少包含一個符號</li>
+            </ol>
+        </div>
+    </div>
+    <script>
+        function pwdcheck() {
+            let result = "";
+            let fpwd = document.getElementById("inputpwd").value;
+            if (fpwd.match(/[a-z]/g) && fpwd.match(/[A-Z]/g) && fpwd.match(/[0-9]/g) &&
+                fpwd.match(/[^a-zA-Z\d]/g) && fpwd.length >= 8) {
+                result = "可使用的密碼組合";
+            } else {
+                result = "密碼不符規定";
+            }
+            document.getElementById("pwdresult").value = result
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body {
+            background-color: rgb(19, 0, 15);
+        }
+
+        .container {
+            width: 30%;
+            background-color: rgb(230, 208, 179);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 100px auto;
+            padding: 10px;
+            border-radius: 15px;
+        }
+
+        .input1 {
+            width: 100px;
+            margin: 30px auto;
+        }
+
+        .equal {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 請設計一個 function，傳入攝氏溫度可以轉成華氏溫度，傳入華氏溫度可以轉成攝氏溫度 -->
+    <div class="bg">
+        <div class="container">
+            <input type="text" placeholder="請輸入攝氏溫度" id="inputC" class="input1">
+            <p>°C</p>
+            <p class="equal">=</p>
+            <input type="text" placeholder="請輸入華氏溫度" id="inputF" class="input1">
+            <p>°F</p>
+        </div>
+    </div>
+    <script>
+        let CtoF = document.getElementById("inputC");
+        let FtoC = document.getElementById("inputF");
+
+        CtoF.addEventListener("input", function () {
+            FtoC.placeholder = `${parseInt((Math.floor((CtoF.value) * 1000)) / 1000 * 9 / 5 + 32)}`
+        })
+
+        FtoC.addEventListener("input", function () {
+            CtoF.placeholder = `${parseInt((Math.floor(FtoC.value * 1000) / 1000 - 32) * 5 / 9)}`
+        })
+
+    </script>
+
+</body>
+
+</html>

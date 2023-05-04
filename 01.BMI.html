@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 讓使用者可以輸入自己的體重及身高，根據算出來的BMI值顯示下列訊息
+        // BMI = 體重(公斤) / 身高(公尺)的平方
+        // BMI ＜ 18.5：過輕
+        // 18.5≦BMI＜24：正常
+        // 24≦BMI＜27：過重
+        // 27≦BMI＜30：輕度肥胖
+        // 30≦BMI＜35：中度肥胖
+        // BMI≧35：重度肥胖
+
+        let weight = parseInt(prompt("輸入體重(kg)"));
+        let height = parseInt(prompt("輸入身高(cm)"));
+
+        let fBMI = (weight, height) => {
+            let BMI = Math.round((weight / ((height / 100) * (height / 100))) * 100) / 100;
+            if (BMI < 18.5) {
+                document.write(`你的BMI數值為${BMI}，過輕`)
+            } else if (18.5 <= BMI && BMI < 24) {
+                document.write(`你的BMI數值為${BMI}，正常`)
+            } else if (24 <= BMI && BMI < 27) {
+                document.write(`你的BMI數值為${BMI}，過重`)
+            } else if (27 <= BMI && BMI < 30) {
+                document.write(`你的BMI數值為${BMI}，輕度肥胖`)
+            } else if (30 <= BMI && BMI < 35) {
+                document.write(`你的BMI數值為${BMI}，中度肥胖`)
+            } else if (35 <= BMI) {
+                document.write(`你的BMI數值為${BMI}，重度肥胖`)
+            }
+        }
+
+        fBMI(weight, height);
+
+
+    </script>
+</body>
+
+</html>

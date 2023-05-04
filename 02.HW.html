@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let tree = () => {
+            for (let y = 1; y <= 11; y++) {
+                let line = ``
+                for (let x = 1; x <= 11; x++) {
+                    if (x + y < 7 || x - y > 5 || y >= 7 && x >= 8 || y >= 7 && x <= 4) {
+                        line = line + `&nbsp&nbsp&nbsp`
+                    } else {
+                        line = line + `★`
+                    }
+                } document.write(`<br>`)
+                document.write(line)
+            }
+        }
+        tree();
+
+    </script>
+</body>
+
+</html>
