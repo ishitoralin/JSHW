@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="btn">抽獎囉</button>
+    <!-- 1、2獎各1、3獎2個、4獎5個、5獎11個 -->
+    <!-- 1獎中獎機率0.1% -->
+    <!-- 2獎中獎機率2.3% -->
+    <!-- 3獎中獎機率13% -->
+    <!-- 4獎中獎機率18% -->
+    <!-- 5獎中獎機率25% -->
+    <script>
+      const btn = document.querySelector(".btn");
+      // 設定獎品數量
+      let first = 1;
+      let second = 1;
+      let third = 2;
+      let forth = 5;
+      let fifth = 11;
+      btn.addEventListener("click", () => {
+        // 產生1~1000隨機數，製造隨機抽獎的感覺
+        let gatcha = Math.floor(Math.random() * 1000) + 1;
+
+        if (gatcha === 1 && first > 0) {
+          console.log("中1獎");
+          first -= 1;
+        } else if (1 < gatcha && gatcha <= 24 && second > 0) {
+          console.log("中2獎");
+          second -= 1;
+        } else if (24 < gatcha && gatcha <= 154 && third > 0) {
+          console.log("中3獎");
+          third -= 1;
+        } else if (154 < gatcha && gatcha <= 334 && forth > 0) {
+          console.log("中4獎");
+          forth -= 1;
+        } else if (334 < gatcha && gatcha <= 584 && fifth > 0) {
+          console.log("中5獎");
+          fifth -= 1;
+        } else {
+          console.log("QQ沒中");
+        }
+        console.log(gatcha);
+        console.log(
+          "1獎剩" + first + "個",
+          "2獎剩" + second + "個",
+          "3獎剩" + third + "個",
+          "4獎剩" + forth + "個",
+          "5獎剩" + fifth + "個"
+        );
+      });
+    </script>
+  </body>
+</html>

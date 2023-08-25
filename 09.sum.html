@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- N為任意正整數 -->
+    <!-- 求1+2-3+4-5+...+N的總和 -->
+    <!-- 運算過程不得當機或耗時不超過3秒 -->
+    <button class="btn">click</button>
+    <script>
+      const btn = document.querySelector(".btn");
+      btn.addEventListener("click", () => {
+        let N = 3123123132415767913213123;
+        if (N === 1) {
+          console.log(N);
+        } else if (N % 2 === 0) {
+          console.log(N / 2 + 2);
+        } else if (N % 2 === 1) {
+          console.log(0 - (N - 3) / 2);
+        }
+      });
+    </script>
+  </body>
+</html>
